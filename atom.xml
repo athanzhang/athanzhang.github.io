@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-31T05:43:11.991Z</updated>
+  <updated>2016-07-31T05:44:45.382Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/07/31/javaScript-DOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E6%AF%94%E8%BE%83%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E6%96%B9/"/>
     <id>http://yoursite.com/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/</id>
     <published>2016-07-31T05:10:18.000Z</published>
-    <updated>2016-07-31T05:43:11.991Z</updated>
+    <updated>2016-07-31T05:44:45.382Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s4677623.jpg" alt=""></p>
 <p>这本入门书籍，的确经典，在第十章的时候，使用javaScript实现简单的动画，为了能够抽象化，在函数里面传递了参数，而javaScript里面的内置函数setTimeout函数的第一个参数是字符串，这个时候就涉及到了字符串的拼接，为了让调用函数作为参数放到setTimeout函数里，都保持是一个字符串。</p>
@@ -28,7 +28,7 @@
 <p><code>moveElement(elementId，final_x,final_y,interval)，</code></p>
 <p>其中第一个参数是一个字符串，其余为number。</p>
 <p>而定义的拼接变量为：</p>
-<p> <code>$var repeat=&quot;moveElement(&#39;&quot;+elementId+&quot;&#39;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;$</code></p>
+<p> <code>var repeat=&quot;moveElement(&#39;&quot;+elementId+&quot;&#39;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
 <p>javaScript里面拼接字符串的时候，都是采用string+string的方式，于是我们可以拆解上述变量</p>
 <blockquote>
 <p>第一个字符串为 “moveElement(‘“</p>

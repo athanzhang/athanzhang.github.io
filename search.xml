@@ -12,7 +12,7 @@
 <p><code>moveElement(elementId，final_x,final_y,interval)，</code></p>
 <p>其中第一个参数是一个字符串，其余为number。</p>
 <p>而定义的拼接变量为：</p>
-<p> <code>$var repeat=&quot;moveElement(&#39;&quot;+elementId+&quot;&#39;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;$</code></p>
+<p> <code>var repeat=&quot;moveElement(&#39;&quot;+elementId+&quot;&#39;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
 <p>javaScript里面拼接字符串的时候，都是采用string+string的方式，于是我们可以拆解上述变量</p>
 <blockquote>
 <p>第一个字符串为 “moveElement(‘“</p>
