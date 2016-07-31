@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-21T15:49:39.312Z</updated>
+  <updated>2016-07-31T05:43:11.991Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javaScript&amp;DOM 编程艺术比较难理解的一个地方</title>
+    <link href="http://yoursite.com/2016/07/31/javaScript-DOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E6%AF%94%E8%BE%83%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E6%96%B9/"/>
+    <id>http://yoursite.com/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/</id>
+    <published>2016-07-31T05:10:18.000Z</published>
+    <updated>2016-07-31T05:43:11.991Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s4677623.jpg" alt=""></p>
+<p>这本入门书籍，的确经典，在第十章的时候，使用javaScript实现简单的动画，为了能够抽象化，在函数里面传递了参数，而javaScript里面的内置函数setTimeout函数的第一个参数是字符串，这个时候就涉及到了字符串的拼接，为了让调用函数作为参数放到setTimeout函数里，都保持是一个字符串。</p>
+<p>定义的函数是这样的 ：</p>
+<p><code>moveElement(elementId，final_x,final_y,interval)，</code></p>
+<p>其中第一个参数是一个字符串，其余为number。</p>
+<p>而定义的拼接变量为：</p>
+<p> <code>$var repeat=&quot;moveElement(&#39;&quot;+elementId+&quot;&#39;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;$</code></p>
+<p>javaScript里面拼接字符串的时候，都是采用string+string的方式，于是我们可以拆解上述变量</p>
+<blockquote>
+<p>第一个字符串为 “moveElement(‘“</p>
+<p>第二个为变量 elementId</p>
+<p>第三个字符串为”‘,”</p>
+<p>第四个为变量final_x</p>
+<p>第五个为字符串”,”</p>
+<p>第六个为变量final_y</p>
+<p>第七个为字符串”,”</p>
+<p>第八个为变量interval</p>
+<p>最后一个味字符串”)”</p>
+</blockquote>
+<p>这样拼接后会保留住双引号里面的字符串的原样，所以相当于解析成了如下形式”moveElement(‘message’,100,200,10)”，（单引号保留，为了保持传入moveElement函数的第一参数为字符串）;</p>
+<p>了解这个道理，其实将变量repeat定义为如下形式，也是一样的结果</p>
+<p><code>var repeat =&quot;moveElement(&quot;&quot;+elementID+&quot;&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
+<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://img3.doubanio.com/lpic/s4677623.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这本入门书籍，的确经典，在第十章的时候，使用javaScript实现简单的动画，为了能够抽象化，在函数里面传递了参数，而javaScr
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+      <category term="front-end" scheme="http://yoursite.com/tags/front-end/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
