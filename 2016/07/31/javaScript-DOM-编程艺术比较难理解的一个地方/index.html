@@ -93,7 +93,8 @@ moveElement(elementId，final_x,fin">
 定义的函数是这样的 ：
 moveElement(elementId，final_x,fin">
 <meta property="og:image" content="https://img3.doubanio.com/lpic/s4677623.jpg">
-<meta property="og:updated_time" content="2016-07-31T05:44:45.382Z">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/dom.JPG">
+<meta property="og:updated_time" content="2016-08-02T07:12:44.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript&DOM 编程艺术比较难理解的一个地方">
 <meta name="twitter:description" content="这本入门书籍，的确经典，在第十章的时候，使用javaScript实现简单的动画，为了能够抽象化，在函数里面传递了参数，而javaScript里面的内置函数setTimeout函数的第一个参数是字符串，这个时候就涉及到了字符串的拼接，为了让调用函数作为参数放到setTimeout函数里，都保持是一个字符串。
@@ -396,8 +397,11 @@ moveElement(elementId，final_x,fin">
 </blockquote>
 <p>这样拼接后会保留住双引号里面的字符串的原样，所以相当于解析成了如下形式”moveElement(‘message’,100,200,10)”，（单引号保留，为了保持传入moveElement函数的第一参数为字符串）;</p>
 <p>了解这个道理，其实将变量repeat定义为如下形式，也是一样的结果</p>
-<p><code>var repeat =&quot;moveElement(&quot;&quot;+elementID+&quot;&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
-<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法</p>
+<p><code>var repeat =&quot;moveElement(\&quot;&quot;+elementID+&quot;\&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
+<p>如这样的情况，var repeat =”moveElement(\””+’zhang’+”\”,”+1+”,”+2+”,”+3+”)”;</p>
+<p>其运行的结果就是：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/dom.JPG" alt=""></p>
+<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法。</p>
 
       
     </div>
@@ -454,6 +458,10 @@ moveElement(elementId，final_x,fin">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/02/JavaScript高级程序设计对象思考/" rel="prev" title="JavaScript高级程序设计对象思考">
+                JavaScript高级程序设计对象思考 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -525,7 +533,7 @@ moveElement(elementId，final_x,fin">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-31T05:44:45.382Z</updated>
+  <updated>2016-08-02T06:48:31.439Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript高级程序设计对象思考</title>
+    <link href="http://yoursite.com/2016/08/02/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AF%B9%E8%B1%A1%E6%80%9D%E8%80%83/"/>
+    <id>http://yoursite.com/2016/08/02/JavaScript高级程序设计对象思考/</id>
+    <published>2016-08-02T03:13:56.000Z</published>
+    <updated>2016-08-02T06:48:31.439Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s8958650.jpg" alt=""></p>
+<p>javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下面这中情况：<br>​    <code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br><code>var person1=new Person();</code><br><code>var person2=new Person();</code><br><code>person1.fridens.push(&quot;jiao&quot;);</code><br><code>alert(person1.friends);//&quot;xu,li,jiao&quot;</code><br><code>alert(person2.friends);//&quot;xu,li,jiao&quot;</code><br>从上面的例子看到，当person1覆盖原型对象中的属性时，由于原型对象的动态性，person2里面的friends属性也被改变了，显然这是不合理的。<br>下面重点讲一下原型模式的一些难理解的地方。首先，原型模式最常见的语法是：<br><code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br>另一种定义的语法是：<br><code>function Person() {</code><br><code>Person.prototype.name=&quot;zhang&quot;;</code><br><code>Person.prototype.age=29;</code><br><code>Person.prototype.job=&quot;Front-end Engineer&quot;;</code><br><code>Person.prototype.friends=[&quot;xu&quot;,&quot;li&quot;];</code><br><code>}</code><br>但是这两种语法形式是有区别的，第一种的原型对象的constructor是指向Object对象的；而第二种的constructor是指向Person函数的。原因是，第一种在定义构造函数Person时，创建了一个默认prototype，这个prototype指向的是默认的原型对象；而下面的prototype对象的定义的时候，相当于是重新创建了一个原型对象，而这个原型对象的类型其实就是Object，其constructor指向的也是Object构造函数。从下图就可以很明白的看出这一点：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype.JPG" alt=""></p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/javaScript.jpg" alt=""></p>
+<p>而这一点在采用构造函数模式和原型模式组合方式时也有体现，原书中，是在prototype对象里显示的将constructor指向了Person函数，其实，不显示指向，Person.prototype.constructor的指向也是Person，因为这里没有完全重新建立prototype对象，只是在创建构造函数时创建的prototype对象基础上修改。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://img3.doubanio.com/lpic/s8958650.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+      <category term="front-end" scheme="http://yoursite.com/tags/front-end/"/>
+    
+  </entry>
+  
+  <entry>
     <title>javaScript&amp;DOM 编程艺术比较难理解的一个地方</title>
     <link href="http://yoursite.com/2016/07/31/javaScript-DOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E6%AF%94%E8%BE%83%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E6%96%B9/"/>
     <id>http://yoursite.com/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/</id>
     <published>2016-07-31T05:10:18.000Z</published>
-    <updated>2016-07-31T05:44:45.382Z</updated>
+    <updated>2016-08-02T07:12:44.419Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s4677623.jpg" alt=""></p>
 <p>这本入门书籍，的确经典，在第十章的时候，使用javaScript实现简单的动画，为了能够抽象化，在函数里面传递了参数，而javaScript里面的内置函数setTimeout函数的第一个参数是字符串，这个时候就涉及到了字符串的拼接，为了让调用函数作为参数放到setTimeout函数里，都保持是一个字符串。</p>
@@ -43,8 +73,11 @@
 </blockquote>
 <p>这样拼接后会保留住双引号里面的字符串的原样，所以相当于解析成了如下形式”moveElement(‘message’,100,200,10)”，（单引号保留，为了保持传入moveElement函数的第一参数为字符串）;</p>
 <p>了解这个道理，其实将变量repeat定义为如下形式，也是一样的结果</p>
-<p><code>var repeat =&quot;moveElement(&quot;&quot;+elementID+&quot;&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
-<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法</p>
+<p><code>var repeat =&quot;moveElement(\&quot;&quot;+elementID+&quot;\&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
+<p>如这样的情况，var repeat =”moveElement(\””+’zhang’+”\”,”+1+”,”+2+”,”+3+”)”;</p>
+<p>其运行的结果就是：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/dom.JPG" alt=""></p>
+<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法。</p>
 ]]></content>
     
     <summary type="html">

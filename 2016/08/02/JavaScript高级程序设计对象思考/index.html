@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javaScript,front-end," />
 
 
 
@@ -82,19 +82,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/07/21/hello-world/index.html">
+<meta property="og:title" content="JavaScript高级程序设计对象思考">
+<meta property="og:url" content="http://yoursite.com/2016/08/02/JavaScript高级程序设计对象思考/index.html">
 <meta property="og:site_name" content="Athanzhang's blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-07-21T15:49:39.312Z">
+<meta property="og:description" content="javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下">
+<meta property="og:image" content="https://img3.doubanio.com/lpic/s8958650.jpg">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/javaScript.jpg">
+<meta property="og:updated_time" content="2016-08-02T06:48:31.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="JavaScript高级程序设计对象思考">
+<meta name="twitter:description" content="javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下">
+<meta name="twitter:image" content="https://img3.doubanio.com/lpic/s8958650.jpg">
 
 
 
@@ -115,9 +116,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/21/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/02/JavaScript高级程序设计对象思考/"/>
 
-  <title> Hello World | Athanzhang's blog </title>
+  <title> JavaScript高级程序设计对象思考 | Athanzhang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -290,7 +291,7 @@ Quick">
             
             
               
-                Hello World
+                JavaScript高级程序设计对象思考
               
             
           </h1>
@@ -302,19 +303,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T23:49:39+08:00" content="2016-07-21">
-              2016-07-21
+            <time itemprop="dateCreated" datetime="2016-08-02T11:13:56+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/21/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/JavaScript高级程序设计对象思考/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/JavaScript高级程序设计对象思考/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -324,7 +344,7 @@ Quick">
 
           
           
-             <span id="/2016/07/21/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2016/08/02/JavaScript高级程序设计对象思考/" class="leancloud_visitors" data-flag-title="JavaScript高级程序设计对象思考">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -351,15 +371,11 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><img src="https://img3.doubanio.com/lpic/s8958650.jpg" alt=""></p>
+<p>javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下面这中情况：<br>​    <code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br><code>var person1=new Person();</code><br><code>var person2=new Person();</code><br><code>person1.fridens.push(&quot;jiao&quot;);</code><br><code>alert(person1.friends);//&quot;xu,li,jiao&quot;</code><br><code>alert(person2.friends);//&quot;xu,li,jiao&quot;</code><br>从上面的例子看到，当person1覆盖原型对象中的属性时，由于原型对象的动态性，person2里面的friends属性也被改变了，显然这是不合理的。<br>下面重点讲一下原型模式的一些难理解的地方。首先，原型模式最常见的语法是：<br><code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br>另一种定义的语法是：<br><code>function Person() {</code><br><code>Person.prototype.name=&quot;zhang&quot;;</code><br><code>Person.prototype.age=29;</code><br><code>Person.prototype.job=&quot;Front-end Engineer&quot;;</code><br><code>Person.prototype.friends=[&quot;xu&quot;,&quot;li&quot;];</code><br><code>}</code><br>但是这两种语法形式是有区别的，第一种的原型对象的constructor是指向Object对象的；而第二种的constructor是指向Person函数的。原因是，第一种在定义构造函数Person时，创建了一个默认prototype，这个prototype指向的是默认的原型对象；而下面的prototype对象的定义的时候，相当于是重新创建了一个原型对象，而这个原型对象的类型其实就是Object，其constructor指向的也是Object构造函数。从下图就可以很明白的看出这一点：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype.JPG" alt=""></p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/javaScript.jpg" alt=""></p>
+<p>而这一点在采用构造函数模式和原型模式组合方式时也有体现，原书中，是在prototype对象里显示的将constructor指向了Person函数，其实，不显示指向，Person.prototype.constructor的指向也是Person，因为这里没有完全重新建立prototype对象，只是在创建构造函数时创建的prototype对象基础上修改。</p>
 
       
     </div>
@@ -396,18 +412,26 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javaScript/" rel="tag">#javaScript</a>
+          
+            <a href="/tags/front-end/" rel="tag">#front-end</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/" rel="next" title="javaScript&DOM 编程艺术比较难理解的一个地方">
+                <i class="fa fa-chevron-left"></i> javaScript&DOM 编程艺术比较难理解的一个地方
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/" rel="prev" title="javaScript&DOM 编程艺术比较难理解的一个地方">
-                javaScript&DOM 编程艺术比较难理解的一个地方 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,8 +457,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/21/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2016/07/21/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/08/02/JavaScript高级程序设计对象思考/"
+           data-title="JavaScript高级程序设计对象思考" data-url="http://yoursite.com/2016/08/02/JavaScript高级程序设计对象思考/">
       </div>
     
   </div>
@@ -561,7 +585,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

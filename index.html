@@ -289,6 +289,139 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/02/JavaScript高级程序设计对象思考/" itemprop="url">
+                  JavaScript高级程序设计对象思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-02T11:13:56+08:00" content="2016-08-02">
+              2016-08-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/02/JavaScript高级程序设计对象思考/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/JavaScript高级程序设计对象思考/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/02/JavaScript高级程序设计对象思考/" class="leancloud_visitors" data-flag-title="JavaScript高级程序设计对象思考">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://img3.doubanio.com/lpic/s8958650.jpg" alt=""></p>
+<p>javaScript创建对象有好几总模式：工厂模式、构造函数模式、原型模式；其作用都是为了创建对象时，针对特定接口来封装，从而创建定制的对象。这几个模式，各有优缺点：工厂模式创造的对象，其类型还是Object；构造函数模式中的方法会在每个实例上重新创建一次，浪费资源；而原型模式，如果含有引用类型属性（如数组），则会导致，一个实例如果改变了原型对象中的属性，其他实例的这个属性也会动态被改变。比如下面这中情况：<br>​    <code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br><code>var person1=new Person();</code><br><code>var person2=new Person();</code><br><code>person1.fridens.push(&quot;jiao&quot;);</code><br><code>alert(person1.friends);//&quot;xu,li,jiao&quot;</code><br><code>alert(person2.friends);//&quot;xu,li,jiao&quot;</code><br>从上面的例子看到，当person1覆盖原型对象中的属性时，由于原型对象的动态性，person2里面的friends属性也被改变了，显然这是不合理的。<br>下面重点讲一下原型模式的一些难理解的地方。首先，原型模式最常见的语法是：<br><code>function Person() {</code><br><code>}</code><br><code>Person.prototype={</code><br><code>name:&quot;zhang&quot;,</code><br><code>age:29,</code><br><code>job:&quot;Front-end Engineer&quot;,</code><br><code>friends:[&quot;xu&quot;,&quot;li&quot;]</code><br><code>};</code><br>另一种定义的语法是：<br><code>function Person() {</code><br><code>Person.prototype.name=&quot;zhang&quot;;</code><br><code>Person.prototype.age=29;</code><br><code>Person.prototype.job=&quot;Front-end Engineer&quot;;</code><br><code>Person.prototype.friends=[&quot;xu&quot;,&quot;li&quot;];</code><br><code>}</code><br>但是这两种语法形式是有区别的，第一种的原型对象的constructor是指向Object对象的；而第二种的constructor是指向Person函数的。原因是，第一种在定义构造函数Person时，创建了一个默认prototype，这个prototype指向的是默认的原型对象；而下面的prototype对象的定义的时候，相当于是重新创建了一个原型对象，而这个原型对象的类型其实就是Object，其constructor指向的也是Object构造函数。从下图就可以很明白的看出这一点：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype.JPG" alt=""></p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/javaScript.jpg" alt=""></p>
+<p>而这一点在采用构造函数模式和原型模式组合方式时也有体现，原书中，是在prototype对象里显示的将constructor指向了Person函数，其实，不显示指向，Person.prototype.constructor的指向也是Person，因为这里没有完全重新建立prototype对象，只是在创建构造函数时创建的prototype对象基础上修改。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/31/javaScript-DOM-编程艺术比较难理解的一个地方/" itemprop="url">
                   javaScript&DOM 编程艺术比较难理解的一个地方
                 </a>
@@ -389,8 +522,11 @@
 </blockquote>
 <p>这样拼接后会保留住双引号里面的字符串的原样，所以相当于解析成了如下形式”moveElement(‘message’,100,200,10)”，（单引号保留，为了保持传入moveElement函数的第一参数为字符串）;</p>
 <p>了解这个道理，其实将变量repeat定义为如下形式，也是一样的结果</p>
-<p><code>var repeat =&quot;moveElement(&quot;&quot;+elementID+&quot;&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
-<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法</p>
+<p><code>var repeat =&quot;moveElement(\&quot;&quot;+elementID+&quot;\&quot;,&quot;+final_x+&quot;,&quot;+final_y+&quot;,&quot;+interval+&quot;)&quot;;</code></p>
+<p>如这样的情况，var repeat =”moveElement(\””+’zhang’+”\”,”+1+”,”+2+”,”+3+”)”;</p>
+<p>其运行的结果就是：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/dom.JPG" alt=""></p>
+<p>只不过作者没有去使用转义字符，而是使用了单引号被双引号包括时保留原义的用法。</p>
 
           
         
@@ -578,7 +714,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
