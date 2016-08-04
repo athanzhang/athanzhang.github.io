@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-02T06:48:31.439Z</updated>
+  <updated>2016-08-04T15:11:39.768Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zhang&#39;s 全栈学习记录1</title>
+    <link href="http://yoursite.com/2016/08/04/Zhang-s-%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/"/>
+    <id>http://yoursite.com/2016/08/04/Zhang-s-全栈学习记录1/</id>
+    <published>2016-08-04T14:25:02.000Z</published>
+    <updated>2016-08-04T15:11:39.768Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="全栈学习记录–开篇"><a href="#全栈学习记录–开篇" class="headerlink" title="全栈学习记录–开篇"></a>全栈学习记录–开篇</h1><p>三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三年的磨砺后，毅然决然下了一个重要的决定，转去做了开发。而我的年龄，算是大龄程序员了，又是没有任何相关经验，压力真的很大。现在算是完全转行，抛弃了从前所有的经验，从头再来，也想着应该记录记录这个过程。</p>
+<p>一个多月前，开启研发生涯后，莫名其妙的被分配了前端的开发任务。看到html、CSS、JavaScript文件一头雾水，而且公司使用了很多框架的东西，更是各种封装，对于零经验的我，简直是天书，但是没办法，既然上了这条船，怎么也要好好走下去。</p>
+<p>开始在知乎、豆瓣等等上面搜集各种前端入门的资料，慢慢的，摸着石头过河的方式，也逐步走上了一点点正道。</p>
+<p><img src="https://img3.doubanio.com/lpic/s22703394.jpg" alt=""></p>
+<p>HTML和CSS是从Jon Duckett这本书开始的，虽然是本英文书，但是书的排版真的很新颖，也看得出来作者的用心；HTML是超文本标记语言，严格来说不是编程语言，只是用来标记网页中的各种元素，从而构建网页的结构；最新的HTML5中添加了semantic标签，如header，article，footer等，从字面意思上，形象的将网页划分成不同的模块，使我们构建网页起来更加规范，不再是一股脑的使用div。CSS自然不用说了，网页的布局、字体、位置的调整都靠它，CSS很好入门，但想做好，可不是一件容易的事情。特别是现在比较流行的响应式布局设计，不过有Bootstrap工具包，可以不用重复造轮子，但是基础还是得先搭好才行。</p>
+<p>在学习的过程中，也学习了程序员最流行的交友社区，GitHub；GitHub是基于Git的一个代码管理平台，不仅仅是代码管理，协作工作，而且还能在上面学习各种开源的项目，真的是开启了另一片天地。在此，也安利一下自己的Github地址，<a href="https://github.com/athanzhang" target="_blank" rel="external">athanzhang</a>。目前，做的东西还不多，只做过几个静态的页面，然后在别人的基础上，改了一个音乐播放器，以后学的更多了，再慢慢加内容。</p>
+<p>在使用GitHub的过程中，又发现了Hexo+GitHub可以快速搭建自己的Blog，在折腾了几个小时后，把自己的第一个博客给搭好了，顺便也安利一下，目前文章不多，以后多更，<a href="https://athanzhang.github.io/" target="_blank" rel="external">Athanzhang’s blog</a>。</p>
+<p>待续…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;全栈学习记录–开篇&quot;&gt;&lt;a href=&quot;#全栈学习记录–开篇&quot; class=&quot;headerlink&quot; title=&quot;全栈学习记录–开篇&quot;&gt;&lt;/a&gt;全栈学习记录–开篇&lt;/h1&gt;&lt;p&gt;三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三
+    
+    </summary>
+    
+      <category term="全栈记录" scheme="http://yoursite.com/categories/%E5%85%A8%E6%A0%88%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+      <category term="full-stack" scheme="http://yoursite.com/tags/full-stack/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript高级程序设计对象思考</title>
