@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-07T13:23:07.817Z</updated>
+  <updated>2016-08-08T15:28:02.383Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understanding   javaScript    Closure</title>
+    <link href="http://yoursite.com/2016/08/08/Understanding-javaScript-Closure/"/>
+    <id>http://yoursite.com/2016/08/08/Understanding-javaScript-Closure/</id>
+    <published>2016-08-08T15:19:25.000Z</published>
+    <updated>2016-08-08T15:28:02.383Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天，看到javaScript闭包这一块的地方，不得不说，第一次接触这样的函数行为，是很难理解的，也是研究了半天，才总算理解了闭包这个牛逼的“东西”；</p>
+<p>首先，什么是闭包，简单来说，就是内部函数（inner function）可以访问外部函数（outer function）的变量以及参数（注意inner function不能直接调用outer function的arguments对象，但可以直接使用参数）；由于，有作用域链（scope chain）的存在，导致闭包在outer function即使在被调用之后，inner function依然可以访问outer function的变量，这意味着，本来应该被销毁的局部变量，却一直保留在了内存中。</p>
+<p>下面看一个简单的闭包例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function showName(firstName,lastName) &#123;</div><div class="line">  var nameInfo=&quot;My name is &quot;;</div><div class="line"></div><div class="line">  function makeFullName() &#123;</div><div class="line"></div><div class="line">  return nameInfo+firstName+&quot; &quot;+lastName;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">return makeFullName;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">showName(&quot;athan&quot;,&quot;Zhang&quot;)();</div><div class="line"></div><div class="line">//会显示My name is athan Zhang</div></pre></td></tr></table></figure>
+<p>上面这个例子，简单的解释了一下内部函数可以直接调用外部函数的变量，以及直接使用外部函数的参数。</p>
+<p>接下来，看一个比较复杂的情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">function celebrityIDCreator (theCelebrities) &#123;</div><div class="line"></div><div class="line">  var i;</div><div class="line"></div><div class="line">  var uniqueID = 100;</div><div class="line"></div><div class="line">  for (i = 0; i &lt; theCelebrities.length; i++) &#123;</div><div class="line"></div><div class="line">  theCelebrities[i][&quot;id&quot;] = function ()  &#123;</div><div class="line"></div><div class="line">  return uniqueID + i;</div><div class="line"></div><div class="line">   &#125;</div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line">  return theCelebrities;</div><div class="line"></div><div class="line">&#125;</div><div class="line">    var actionCelebs = [&#123;name:&quot;Stallone&quot;, id:0&#125;, &#123;name:&quot;Cruise&quot;, id:0&#125;,&#123;name:&quot;Willis&quot;, id:0&#125;];   </div><div class="line"></div><div class="line">    var createIdForActionCelebs = celebrityIDCreator (actionCelebs);</div><div class="line"></div><div class="line">    var stalloneID = createIdForActionCelebs [0];</div><div class="line"></div><div class="line">    console.log(stalloneID.id());</div><div class="line"></div><div class="line">    var cruiseID = createIdForActionCelebs [1];</div><div class="line"></div><div class="line">    console.log(cruiseID.id());</div></pre></td></tr></table></figure>
+<p>这个例子中，console打印出的结果都是103。因为var createIdForActionCelebs = celebrityIDCreator (actionCelebs) 这里在调用外部函数celebrityIDCreator时，完成了外部函数里面定义的语句块的内容，这也意味着，for循环也执行完毕，数组theCelebrities的id属性被赋予了函数表达式，但这个内部函数此时并没有被调用。在后面stalloneID.id()显示调用内部函数时，返回了uniqueID+i的值，而外部函数早已调用完毕，此时的i的值，已经是3，所以，无论调用theCelebrities数组里面哪一个对象，返回的值都是一样的，这也是闭包存在的一个问题，那怎么解决这个问题呢，得看下面的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">function celebrityIDCreator (theCelebrities) &#123;</div><div class="line">    var i;</div><div class="line"></div><div class="line">    var uniqueID = 100;</div><div class="line"></div><div class="line">    for (i = 0; i &lt; theCelebrities.length; i++) &#123;</div><div class="line"></div><div class="line">    theCelebrities[i][&quot;id&quot;] = function (j)  &#123; </div><div class="line"></div><div class="line">    return function () &#123; return uniqueID + j; &#125; () ;</div><div class="line"></div><div class="line">      &#125; (i); </div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">  return theCelebrities;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  var actionCelebs = [&#123;name:&quot;Stallone&quot;, id:0&#125;, &#123;name:&quot;Cruise&quot;, id:0&#125;, &#123;name:&quot;Willis&quot;, id:0&#125;];</div><div class="line"></div><div class="line">  var createIdForActionCelebs = celebrityIDCreator (actionCelebs);</div><div class="line"></div><div class="line">  var stalloneID = createIdForActionCelebs [0];</div><div class="line"></div><div class="line">  console.log(stalloneID.id); // 100</div><div class="line"></div><div class="line">  var cruiseID = createIdForActionCelebs [1];</div><div class="line"></div><div class="line">  console.log(cruiseID.id);</div></pre></td></tr></table></figure>
+<p>这个例子里，使用了一种Immediately Invoked Function Expression（立刻调用函数表达式）的语法。上面的函数表达式function(j){/<em>code</em>/}(i)，直接在赋值时就调用了，而且将i的值赋给了j，同样闭包里面也用了同样的语法，这样就可以在循环时，就直接调用内部函数，得到想要的值，这个例子里面打印的就是100和101。</p>
+<p>有一点需要注意的是，函数表达式function(j){/<em>code</em>/}(i)和函数声明是不一样的，如果在以为函数声明时，在函数后面加上（）这个括号，就是直接调用函数，是会出错的，因为编译器认为这个是函数声明，而不是函数表达式。但是如果用一个括号，将整个函数声明包起来，编译器会认为是一个表达式，就不会报错，如下面所示：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/closure.JPG" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天，看到javaScript闭包这一块的地方，不得不说，第一次接触这样的函数行为，是很难理解的，也是研究了半天，才总算理解了闭包这个牛逼的“东西”；&lt;/p&gt;
+&lt;p&gt;首先，什么是闭包，简单来说，就是内部函数（inner function）可以访问外部函数（outer fun
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+      <category term="front-end" scheme="http://yoursite.com/tags/front-end/"/>
+    
+      <category term="closure" scheme="http://yoursite.com/tags/closure/"/>
+    
+  </entry>
   
   <entry>
     <title>那些年看过的思密达的好电影</title>
@@ -143,9 +182,9 @@
       <category term="全栈记录" scheme="http://yoursite.com/categories/%E5%85%A8%E6%A0%88%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="full-stack" scheme="http://yoursite.com/tags/full-stack/"/>
-    
       <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+      <category term="full-stack" scheme="http://yoursite.com/tags/full-stack/"/>
     
   </entry>
   
