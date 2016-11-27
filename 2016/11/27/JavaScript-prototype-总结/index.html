@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript,full-stack," />
+  <meta name="keywords" content="[object Object]," />
 
 
 
@@ -82,21 +82,31 @@
 
 
 
-<meta name="description" content="全栈学习记录–开篇三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三年的磨砺后，毅然决然下了一个重要的决定，转去做了开发。而我的年龄，算是大龄程序员了，又是没有任何相关经验，压力真的很大。现在算是完全转行，抛弃了从前所有的经验，从头再来，也想着应该记录记录这个过程。
-一个多月前，开启研发生涯后，莫名其妙的被分配了前端的开发任务。看到html、CSS、JavaScr">
+<meta name="description" content="JavaScript prototype summaryjavaScript的prototype属性是一个对象，每一个函数在定义后，都会自动获得这个属性，其初始值是一个空的对象(Object)，可以看看下面这个例子：
+
+上面新建了一个名为Dog的构造函数，其prototype为一个对象，constructor和proto都是在prototype创建时，默认的自带属性，创建一个新对象时，就会带有这两">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Zhang's 全栈学习记录1">
-<meta property="og:url" content="http://yoursite.com/2016/08/04/Zhang-s-全栈学习记录1/index.html">
+<meta property="og:title" content="JavaScript prototype 总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/27/JavaScript-prototype-总结/index.html">
 <meta property="og:site_name" content="Athanzhang's blog">
-<meta property="og:description" content="全栈学习记录–开篇三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三年的磨砺后，毅然决然下了一个重要的决定，转去做了开发。而我的年龄，算是大龄程序员了，又是没有任何相关经验，压力真的很大。现在算是完全转行，抛弃了从前所有的经验，从头再来，也想着应该记录记录这个过程。
-一个多月前，开启研发生涯后，莫名其妙的被分配了前端的开发任务。看到html、CSS、JavaScr">
-<meta property="og:image" content="https://img3.doubanio.com/lpic/s22703394.jpg">
-<meta property="og:updated_time" content="2016-08-04T15:11:39.768Z">
+<meta property="og:description" content="JavaScript prototype summaryjavaScript的prototype属性是一个对象，每一个函数在定义后，都会自动获得这个属性，其初始值是一个空的对象(Object)，可以看看下面这个例子：
+
+上面新建了一个名为Dog的构造函数，其prototype为一个对象，constructor和proto都是在prototype创建时，默认的自带属性，创建一个新对象时，就会带有这两">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype1.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype2.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype3.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype4.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype5.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype6.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype7.JPG">
+<meta property="og:image" content="http://oasnyeg67.bkt.clouddn.com/prototype8.JPG">
+<meta property="og:updated_time" content="2016-11-27T08:06:15.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zhang's 全栈学习记录1">
-<meta name="twitter:description" content="全栈学习记录–开篇三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三年的磨砺后，毅然决然下了一个重要的决定，转去做了开发。而我的年龄，算是大龄程序员了，又是没有任何相关经验，压力真的很大。现在算是完全转行，抛弃了从前所有的经验，从头再来，也想着应该记录记录这个过程。
-一个多月前，开启研发生涯后，莫名其妙的被分配了前端的开发任务。看到html、CSS、JavaScr">
-<meta name="twitter:image" content="https://img3.doubanio.com/lpic/s22703394.jpg">
+<meta name="twitter:title" content="JavaScript prototype 总结">
+<meta name="twitter:description" content="JavaScript prototype summaryjavaScript的prototype属性是一个对象，每一个函数在定义后，都会自动获得这个属性，其初始值是一个空的对象(Object)，可以看看下面这个例子：
+
+上面新建了一个名为Dog的构造函数，其prototype为一个对象，constructor和proto都是在prototype创建时，默认的自带属性，创建一个新对象时，就会带有这两">
+<meta name="twitter:image" content="http://oasnyeg67.bkt.clouddn.com/prototype1.JPG">
 
 
 
@@ -117,9 +127,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/04/Zhang-s-全栈学习记录1/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/27/JavaScript-prototype-总结/"/>
 
-  <title> Zhang's 全栈学习记录1 | Athanzhang's blog </title>
+  <title> JavaScript prototype 总结 | Athanzhang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -292,7 +302,7 @@
             
             
               
-                Zhang's 全栈学习记录1
+                JavaScript prototype 总结
               
             
           </h1>
@@ -304,8 +314,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-04T22:25:02+08:00" content="2016-08-04">
-              2016-08-04
+            <time itemprop="dateCreated" datetime="2016-11-27T08:32:54+08:00" content="2016-11-27">
+              2016-11-27
             </time>
           </span>
 
@@ -318,8 +328,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/全栈记录/" itemprop="url" rel="index">
-                    <span itemprop="name">全栈记录</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -334,8 +344,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/04/Zhang-s-全栈学习记录1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/Zhang-s-全栈学习记录1/" itemprop="commentsCount"></span>
+                <a href="/2016/11/27/JavaScript-prototype-总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/JavaScript-prototype-总结/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,7 +355,7 @@
 
           
           
-             <span id="/2016/08/04/Zhang-s-全栈学习记录1/" class="leancloud_visitors" data-flag-title="Zhang's 全栈学习记录1">
+             <span id="/2016/11/27/JavaScript-prototype-总结/" class="leancloud_visitors" data-flag-title="JavaScript prototype 总结">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -372,14 +382,25 @@
       
 
       
-        <h1 id="全栈学习记录–开篇"><a href="#全栈学习记录–开篇" class="headerlink" title="全栈学习记录–开篇"></a>全栈学习记录–开篇</h1><p>三年前，力学专业的我，阴差阳错入职华为开启了技术服务工程师的职业生涯，在经历了一线三年的磨砺后，毅然决然下了一个重要的决定，转去做了开发。而我的年龄，算是大龄程序员了，又是没有任何相关经验，压力真的很大。现在算是完全转行，抛弃了从前所有的经验，从头再来，也想着应该记录记录这个过程。</p>
-<p>一个多月前，开启研发生涯后，莫名其妙的被分配了前端的开发任务。看到html、CSS、JavaScript文件一头雾水，而且公司使用了很多框架的东西，更是各种封装，对于零经验的我，简直是天书，但是没办法，既然上了这条船，怎么也要好好走下去。</p>
-<p>开始在知乎、豆瓣等等上面搜集各种前端入门的资料，慢慢的，摸着石头过河的方式，也逐步走上了一点点正道。</p>
-<p><img src="https://img3.doubanio.com/lpic/s22703394.jpg" alt=""></p>
-<p>HTML和CSS是从Jon Duckett这本书开始的，虽然是本英文书，但是书的排版真的很新颖，也看得出来作者的用心；HTML是超文本标记语言，严格来说不是编程语言，只是用来标记网页中的各种元素，从而构建网页的结构；最新的HTML5中添加了semantic标签，如header，article，footer等，从字面意思上，形象的将网页划分成不同的模块，使我们构建网页起来更加规范，不再是一股脑的使用div。CSS自然不用说了，网页的布局、字体、位置的调整都靠它，CSS很好入门，但想做好，可不是一件容易的事情。特别是现在比较流行的响应式布局设计，不过有Bootstrap工具包，可以不用重复造轮子，但是基础还是得先搭好才行。</p>
-<p>在学习的过程中，也学习了程序员最流行的交友社区，GitHub；GitHub是基于Git的一个代码管理平台，不仅仅是代码管理，协作工作，而且还能在上面学习各种开源的项目，真的是开启了另一片天地。在此，也安利一下自己的Github地址，<a href="https://github.com/athanzhang" target="_blank" rel="external">athanzhang</a>。目前，做的东西还不多，只做过几个静态的页面，然后在别人的基础上，改了一个音乐播放器，以后学的更多了，再慢慢加内容。</p>
-<p>在使用GitHub的过程中，又发现了Hexo+GitHub可以快速搭建自己的Blog，在折腾了几个小时后，把自己的第一个博客给搭好了，顺便也安利一下，目前文章不多，以后多更，<a href="https://athanzhang.github.io/" target="_blank" rel="external">Athanzhang’s blog</a>。</p>
-<p>待续…</p>
+        <h1 id="JavaScript-prototype-summary"><a href="#JavaScript-prototype-summary" class="headerlink" title="JavaScript prototype summary"></a>JavaScript prototype summary</h1><p>javaScript的prototype属性是一个对象，每一个函数在定义后，都会自动获得这个属性，其初始值是一个空的对象(Object)，可以看看下面这个例子：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype1.JPG" alt=""></p>
+<p>上面新建了一个名为Dog的构造函数，其prototype为一个对象，constructor和<strong>proto</strong>都是在prototype创建时，默认的自带属性，创建一个新对象时，就会带有这两个属性，无论其是否为空，例如：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype2.JPG" alt=""></p>
+<p>需要注意的是，创建的对象没有prototype属性，但是每个对象都有一个<strong>proto</strong>的隐藏属性，其功能和prototype类似，可以指向其构造函数（constructor）的原型对象（prototype）。听起来很拗口，直接看例子比较直观，还是刚刚上面的例子，接着查看对象更多的属性：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype3.JPG" alt=""></p>
+<p>可以看到，对象a的构造函数的原型对象和对象a的隐藏<strong>proto</strong>属性所指向的是同一个对象。</p>
+<p>从上面的几个例子里面，我们可以做出一个延伸，既然每个对象都有一个constructor，而每个constructor又有一个prototype对象，prototype本身又是对象，其肯定也会有它自己的constructor，有种陷入死循环的感觉，但javaScript不会让这个发生，所有对象的爹都是Object()对象，像这样通过prototype连环指向，层层相连，也就是javaScript里面的原型链（prototype chain）的概念。</p>
+<p>下面，通过一个更直观的例子，来加深对原型链的理解：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype4.JPG" alt=""></p>
+<p>先看第一种情况，创建了一个Dog的构造函数，用其创建了一个对象rusty，可以看到rusty就拥有了Dog函数定义时所带有的属性（tail），同时，也拥有Dog的原型中的属性（say函数）：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype5.JPG" alt=""></p>
+<p>不仅仅拥有Dog和Dog.prototye里面的属性，进一步可以看到rusty的隐藏属性<strong>proto</strong>与Dog.prototype的关系，以及Dog、Dog.prototype其自身的隐藏属性与Function()、Object()对象的关系。</p>
+<p>还有一种情况是将Dog.prototype赋值为新的对象，此时Dog.prototype的构造函数属性的指向会发生改变，而且原先创建的对象rusty不会有新的Dog.prototype的新的属性，但老的属性还是保留：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype6.JPG" alt=""></p>
+<p>可以看到，Dog.prototype.constructor已经不再指向Dog了，而rusty仍然可以保留有原来创建时得来的属性。此时，若在创建一个新的对象，便可获得新的Dog.prototype的属性，例如下面：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype7.JPG" alt=""></p>
+<p>将上面的情况总结为一个链接图，可以更清晰的理顺其中的关系（纯手工作画）：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype8.JPG" alt=""></p>
 
       
     </div>
@@ -418,9 +439,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag">#javaScript</a>
-          
-            <a href="/tags/full-stack/" rel="tag">#full-stack</a>
+            <a href="/tags/object-Object/" rel="tag">#[object Object]</a>
           
         </div>
       
@@ -429,17 +448,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/02/JavaScript高级程序设计对象思考/" rel="next" title="JavaScript高级程序设计对象思考">
-                <i class="fa fa-chevron-left"></i> JavaScript高级程序设计对象思考
+              <a href="/2016/09/25/zhang-s-全栈学习记录3/" rel="next" title="zhang's 全栈学习记录3">
+                <i class="fa fa-chevron-left"></i> zhang's 全栈学习记录3
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/07/那些年看过的思密达的好电影/" rel="prev" title="那些年看过的思密达的好电影">
-                那些年看过的思密达的好电影 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -465,8 +480,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/04/Zhang-s-全栈学习记录1/"
-           data-title="Zhang's 全栈学习记录1" data-url="http://yoursite.com/2016/08/04/Zhang-s-全栈学习记录1/">
+      <div class="ds-thread" data-thread-key="2016/11/27/JavaScript-prototype-总结/"
+           data-title="JavaScript prototype 总结" data-url="http://yoursite.com/2016/11/27/JavaScript-prototype-总结/">
       </div>
     
   </div>
@@ -593,7 +608,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全栈学习记录–开篇"><span class="nav-number">1.</span> <span class="nav-text">全栈学习记录–开篇</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-prototype-summary"><span class="nav-number">1.</span> <span class="nav-text">JavaScript prototype summary</span></a></li></ol></div>
             
           </div>
         </section>

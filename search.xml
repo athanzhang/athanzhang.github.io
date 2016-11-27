@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[JavaScript prototype 总结]]></title>
+      <url>http://yoursite.com/2016/11/27/JavaScript-prototype-%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h1 id="JavaScript-prototype-summary"><a href="#JavaScript-prototype-summary" class="headerlink" title="JavaScript prototype summary"></a>JavaScript prototype summary</h1><p>javaScript的prototype属性是一个对象，每一个函数在定义后，都会自动获得这个属性，其初始值是一个空的对象(Object)，可以看看下面这个例子：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype1.JPG" alt=""></p>
+<p>上面新建了一个名为Dog的构造函数，其prototype为一个对象，constructor和<strong>proto</strong>都是在prototype创建时，默认的自带属性，创建一个新对象时，就会带有这两个属性，无论其是否为空，例如：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype2.JPG" alt=""></p>
+<p>需要注意的是，创建的对象没有prototype属性，但是每个对象都有一个<strong>proto</strong>的隐藏属性，其功能和prototype类似，可以指向其构造函数（constructor）的原型对象（prototype）。听起来很拗口，直接看例子比较直观，还是刚刚上面的例子，接着查看对象更多的属性：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype3.JPG" alt=""></p>
+<p>可以看到，对象a的构造函数的原型对象和对象a的隐藏<strong>proto</strong>属性所指向的是同一个对象。</p>
+<p>从上面的几个例子里面，我们可以做出一个延伸，既然每个对象都有一个constructor，而每个constructor又有一个prototype对象，prototype本身又是对象，其肯定也会有它自己的constructor，有种陷入死循环的感觉，但javaScript不会让这个发生，所有对象的爹都是Object()对象，像这样通过prototype连环指向，层层相连，也就是javaScript里面的原型链（prototype chain）的概念。</p>
+<p>下面，通过一个更直观的例子，来加深对原型链的理解：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype4.JPG" alt=""></p>
+<p>先看第一种情况，创建了一个Dog的构造函数，用其创建了一个对象rusty，可以看到rusty就拥有了Dog函数定义时所带有的属性（tail），同时，也拥有Dog的原型中的属性（say函数）：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype5.JPG" alt=""></p>
+<p>不仅仅拥有Dog和Dog.prototye里面的属性，进一步可以看到rusty的隐藏属性<strong>proto</strong>与Dog.prototype的关系，以及Dog、Dog.prototype其自身的隐藏属性与Function()、Object()对象的关系。</p>
+<p>还有一种情况是将Dog.prototype赋值为新的对象，此时Dog.prototype的构造函数属性的指向会发生改变，而且原先创建的对象rusty不会有新的Dog.prototype的新的属性，但老的属性还是保留：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype6.JPG" alt=""></p>
+<p>可以看到，Dog.prototype.constructor已经不再指向Dog了，而rusty仍然可以保留有原来创建时得来的属性。此时，若在创建一个新的对象，便可获得新的Dog.prototype的属性，例如下面：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype7.JPG" alt=""></p>
+<p>将上面的情况总结为一个链接图，可以更清晰的理顺其中的关系（纯手工作画）：</p>
+<p><img src="http://oasnyeg67.bkt.clouddn.com/prototype8.JPG" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[zhang's 全栈学习记录3]]></title>
       <url>http://yoursite.com/2016/09/25/zhang-s-%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/</url>
       <content type="html"><![CDATA[<h1 id="全栈学习记录-成长"><a href="#全栈学习记录-成长" class="headerlink" title="全栈学习记录-成长"></a>全栈学习记录-成长</h1><blockquote>
